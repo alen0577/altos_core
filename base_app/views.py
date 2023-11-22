@@ -6287,6 +6287,7 @@ def projectmanager_assignproject(request):
             var.tl_id = request.POST['pname']
             var.task = request.POST['task']
             var.description=request.POST.get('desc')
+            var.tl_description=request.POST.get('desc')
             var.startdate=request.POST.get('sdate')
             var.enddate=request.POST.get('edate')
             var.worktype=request.POST.get('individual_work')

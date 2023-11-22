@@ -265,11 +265,11 @@ class project_taskassign(models.Model):
                                related_name='project_taskassign_tester', null=True, blank=True)
     departments = models.ForeignKey(department, on_delete=models.SET_NULL,
                                related_name='project_taskassign_department', null=True, blank=True)
-    description = models.TextField()
+    description = models.TextField( null=True, blank=True ,default='None')
     
-    task = models.CharField(max_length=200, null=True, blank=True)
+    task = models.TextField( null=True, blank=True,default='None')
     
-    subtask = models.CharField(max_length=200, null=True, blank=True)
+    subtask = models.TextField( null=True, blank=True, default='None')
     startdate = models.DateField(
         auto_now_add=False, auto_now=False,  null=True, blank=True)
     enddate = models.DateField(
@@ -279,7 +279,7 @@ class project_taskassign(models.Model):
     reason = models.TextField(null=True, blank=True)
     extension_status = models.CharField(max_length=200, null=True, blank=True)
     extension_date= models.DateField(auto_now_add=False, auto_now=False,  null=True, blank=True)
-    tl_description = models.CharField(max_length=200, null=True, blank=True)
+    tl_description = models.TextField( null=True, blank=True, default='None')
     submitted_date = models.DateField(
         auto_now_add=False, auto_now=False,  null=True, blank=True)
     employee_files = models.FileField(
